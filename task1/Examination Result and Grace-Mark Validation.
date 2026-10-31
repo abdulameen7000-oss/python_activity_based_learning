@@ -1,0 +1,31 @@
+n = int(input("Enter number of subjects: "))
+total = 0
+marks = []
+
+for i in range(n):
+    m = int(input("Enter marks: "))
+
+    if m >= 30 and m < 35:
+        m = 35
+        print("Grace marks added")
+
+    marks.append(m)
+    total += m
+
+for i in range(n):
+    if marks[i] >= 35:
+        print("Subject", i+1, "Pass")
+    else:
+        print("Subject", i+1, "Fail")
+
+print("Total Marks:", total)
+print("Percentage:", total/n)
+
+if total/n >= 75:
+    print("Distinction")
+elif total/n >= 60:
+    print("First Class")
+elif total/n >= 50:
+    print("Second Class")
+else:
+    print("Pass")
